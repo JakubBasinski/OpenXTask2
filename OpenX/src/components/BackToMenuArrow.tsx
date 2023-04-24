@@ -28,7 +28,7 @@ export const BackToMenuArrow = ({ handleShowMenu }) => {
       }}
     >
       <ArrowBackIcon fontSize="small" />
-      <Typography variatn={'body3'}>Back</Typography>
+      {/* <Typography variatn={'body3'}>Back</Typography> */}
     </Box>
   );
 };

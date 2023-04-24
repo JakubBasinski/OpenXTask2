@@ -35,7 +35,10 @@ export const UserList = ({
         }}
       >
         <Typography
-          sx={{
+          sx={(theme) => ({
+            [theme.breakpoints.down('md')]: {
+              padding: '5px 10px',
+            },
             color:
               activeUser?.id === user?.id ? 'primary.dark' : 'secondary.dark',
             fontSize: '1.3rem',
@@ -52,7 +55,7 @@ export const UserList = ({
             '&:hover': {
               color: 'primary.dark',
             },
-          }}
+          })}
           onClick={() => setActiveUser(user)}
         >
           {capFirstLetter(user.name.firstname)}{' '}

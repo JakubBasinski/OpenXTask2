@@ -35,7 +35,10 @@ export const CartList = ({
         }}
       >
         <Typography
-          sx={{
+          sx={(theme) =>({
+            [theme.breakpoints.down('md')]: {
+              padding: '5px 10px',
+            },
             color:
               activeCart?.id === cart?.id ? 'primary.dark' : 'secondary.dark',
             fontSize: '1.3rem',
@@ -54,7 +57,7 @@ export const CartList = ({
             '&:hover': {
               color: 'primary.dark',
             },
-          }}
+          })}
           onClick={() => setActiveCart(cart)}
         >
           Cart {cart.id}

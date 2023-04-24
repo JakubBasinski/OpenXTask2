@@ -2,6 +2,8 @@ export const list = {
   display: 'flex',
   flexDirection: 'column',
   gap: '10px',
+  marginBottom: '5px'
+
 };
 
 export const customSelectWrapper = {
@@ -22,8 +24,11 @@ export const formControl = {
   color: 'primary.dark',
 };
 
-export const selectElement = {
+export const selectElement = (theme) => ({
   minWidth: '250px',
+  [theme.breakpoints.down('md')]: {
+    minWidth: '0px',
+  },
   backgroundColor: 'rgba(0, 0, 0, 0.9)',
   fontSize: '1.8rem',
 
@@ -46,7 +51,7 @@ export const selectElement = {
   '& .MuiInputBase-input': {
     color: 'primary.dark',
   },
-};
+});
 
 export const menuItem = {
   color: 'primary.dark',
@@ -76,7 +81,6 @@ export const stackStyles = {
   color: 'grey.500',
 };
 
-
 export const productCardRoot = (theme) => ({
   [theme.breakpoints.down('sm')]: {
     padding: '0px',
@@ -94,16 +98,16 @@ export const productCardRoot = (theme) => ({
   borderColor: 'primary.dark',
   gap: '50px',
   borderRadius: '5px',
-})
+});
 
 export const productCardImg = (theme) => ({
   maxWidth: '200px',
   maxHeight: '300px',
-  [theme.breakpoints.down('md')]:{
+  [theme.breakpoints.down('md')]: {
     maxWidth: '300px',
     maxHeight: '400px',
-  }
-})
+  },
+});
 
 export const productCardInfo = (theme) => ({
   [theme.breakpoints.up('lg')]: {
@@ -113,21 +117,20 @@ export const productCardInfo = (theme) => ({
   flexDirection: 'column',
   gap: '15px',
   width: '100%',
-})
+});
 
 export const productCardText = {
   color: 'primary.dark',
   textAlign: 'start ',
   fontSize: '1.4rem',
-}
-export const productCardSub = 
-  {
-    textAlign: 'start ',
-    color: 'grey',
-    padding: '0',
-    margin: '0',
-    fontSize: ' 0.8rem',
-  }
+};
+export const productCardSub = {
+  textAlign: 'start ',
+  color: 'grey',
+  padding: '0',
+  margin: '0',
+  fontSize: ' 0.8rem',
+};
 
 export const userCardRoot = {
   display: 'flex',
@@ -139,14 +142,13 @@ export const userCardRoot = {
   border: '1px solid',
   borderRadius: '5px',
   color: 'primary.dark',
-}
+};
 
-
-export const buttonWrapper ={
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'flex-end',
-}
+export const buttonWrapper = {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'flex-end',
+};
 
 export const cartCardRoot = {
   display: 'flex',
@@ -157,4 +159,4 @@ export const cartCardRoot = {
   borderRadius: '5px',
   gap: '15px',
   marginTop: '30px',
-}
+};

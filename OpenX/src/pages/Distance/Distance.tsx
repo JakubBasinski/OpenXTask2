@@ -145,7 +145,16 @@ export const Distance = () => {
         <Box sx={cls.upperPart}>
           <Box sx={cls.distanceInfor}>
             <Box sx={cls.infoBox}>
-              <Typography variant={'h5'} sx={{ color: 'primary.dark' }}>
+              <Typography
+                variant={'h5'}
+                sx={(theme) => ({
+                  [theme.breakpoints.down('md')]: {
+                    variant: 'body',
+                  },
+
+                  color: 'primary.dark',
+                })}
+              >
                 The largest distance is equal{' '}
                 <Typography
                   variant={'h4'}
@@ -238,7 +247,8 @@ export const Distance = () => {
                   {isSmallScreen && (
                     <Box
                       sx={{
-                        marginTop: '50px',
+                        marginTop: '30px',
+                        marginBottom: '30px',
                         border: 'solid 1px',
                         padding: '10px 20px ',
                         borderRadius: '5px',
@@ -263,6 +273,10 @@ export const Distance = () => {
 
           {(!showCustomUsers || !isSmallScreen) && (
             <Box sx={cls.mapWrapper}>
+              <Map
+                setSnackBarOpen={setSnackBarOpen}
+                selectedUsers={selectedUsers}
+              />
               {isSmallScreen && (
                 <CancelPresentationIcon
                   fontSize="large"
@@ -280,11 +294,6 @@ export const Distance = () => {
                   }}
                 />
               )}
-
-              <Map
-                setSnackBarOpen={setSnackBarOpen}
-                selectedUsers={selectedUsers}
-              />
             </Box>
           )}
         </Box>

@@ -7,7 +7,7 @@ export const container = (theme) => {
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: 'rgba(0, 0, 0, 0.95)',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
   };
@@ -17,6 +17,7 @@ export const upperPart = (theme) => {
   return {
     height: '25%',
     display: 'flex',
+    flexGrow: 0,
     [theme.breakpoints.down('md')]: {
       width: '100%',
       height: 'auto',
@@ -24,13 +25,19 @@ export const upperPart = (theme) => {
   };
 };
 
-export const distanceInfor = {
-  padding: '20px 30px',
-  display: 'flex',
-  flexDirection: 'column',
-  borderRadius: '5px',
-  gap: ' 15px',
-  margin: 'auto',
+export const distanceInfor = (theme) => {
+  return {
+    padding: '20px 30px',
+    display: 'flex',
+    flexDirection: 'column',
+    borderRadius: '5px',
+    gap: ' 15px',
+    margin: 'auto',
+
+    [theme.breakpoints.down('md')]: {
+      marginTop: '40px',
+    },
+  };
 };
 
 export const infoBox = { display: 'flex' };
@@ -47,11 +54,12 @@ export const bottomPart = (theme) => ({
   height: '75%',
   display: 'flex',
   width: '100%',
-
+  backgroundColor: 'rgba(0, 0, 0, 0.95)',
   [theme.breakpoints.down('md')]: {
     width: '100%',
     height: 'auto',
-    marginTop: '20px',
+    margin: 'auto',
+    marginTop: '20px'
   },
 });
 
@@ -134,10 +142,9 @@ export const mapWrapper = (theme) => {
   return {
     color: 'primary.dark',
     padding: '10px',
-
     width: '100%',
     height: '100%',
-    [theme.breakpoints.down('md')]: {
-    },
+    display: 'flex',
+    [theme.breakpoints.down('md')]: {},
   };
 };

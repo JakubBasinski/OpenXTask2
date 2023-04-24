@@ -8,7 +8,12 @@ import { useState } from 'react';
 import styles from '../data.module.scss';
 import * as cls from './sytlesComponentsSx';
 
-export const ProductList = ({ products,handleShowCart, activeProduct, setActiveProducts }) => {
+export const ProductList = ({
+  products,
+  handleShowCart,
+  activeProduct,
+  setActiveProducts,
+}) => {
   const [pageNumber, setPageNumber] = useState(0);
   const prodctsPerPage = 8;
   const pagesVisited = pageNumber * prodctsPerPage;
@@ -31,7 +36,10 @@ export const ProductList = ({ products,handleShowCart, activeProduct, setActiveP
         }}
       >
         <Typography
-          sx={{
+          sx={(theme) =>({
+            [theme.breakpoints.down('md')]: {
+              padding: '5px 10px',
+            },
             color:
               activeProduct?.id === product?.id
                 ? 'primary.dark'
@@ -53,7 +61,7 @@ export const ProductList = ({ products,handleShowCart, activeProduct, setActiveP
             '&:hover': {
               color: 'primary.dark',
             },
-          }}
+          })}
           onClick={() => setActiveProducts(product)}
         >
           {product.id}. {shorthenString(product.title, 3)}
