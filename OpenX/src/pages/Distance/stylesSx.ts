@@ -54,7 +54,6 @@ export const bottomPart = (theme) => ({
   height: '75%',
   display: 'flex',
   width: '100%',
-  backgroundColor: 'rgba(0, 0, 0, 0.95)',
   [theme.breakpoints.down('md')]: {
     width: '100%',
     height: 'auto',
