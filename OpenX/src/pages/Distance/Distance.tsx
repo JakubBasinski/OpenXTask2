@@ -251,6 +251,7 @@ export const Distance = () => {
                         marginBottom: '30px',
                         border: 'solid 1px',
                         padding: '10px 20px ',
+                        backgroundColor:  'rgba(0, 0, 0, 0.95)',
                         borderRadius: '5px',
                         color: 'primary.dark',
                         cursor: 'pointer',

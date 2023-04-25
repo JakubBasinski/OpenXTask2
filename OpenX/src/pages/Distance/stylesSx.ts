@@ -6,8 +6,7 @@ export const container = (theme) => {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: 'rgba(0, 0, 0, 0.95)',
-    // justifyContent: 'center',
+
     alignItems: 'center',
     height: '100%',
   };
@@ -17,7 +16,9 @@ export const upperPart = (theme) => {
   return {
     height: '25%',
     display: 'flex',
+    width:'100%',
     flexGrow: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
     [theme.breakpoints.down('md')]: {
       width: '100%',
       height: 'auto',
@@ -35,7 +36,7 @@ export const distanceInfor = (theme) => {
     margin: 'auto',
 
     [theme.breakpoints.down('md')]: {
-      marginTop: '40px',
+      padding: '70px 30px 50px 30px',
     },
   };
 };
@@ -51,14 +52,14 @@ export const userDetails = {
 export const singleUserBox = { display: 'flex', gap: '5px' };
 
 export const bottomPart = (theme) => ({
+  backgroundColor: 'rgba(0, 0, 0, 0.9)',
   height: '75%',
   display: 'flex',
   width: '100%',
   [theme.breakpoints.down('md')]: {
     width: '100%',
-    height: 'auto',
+    height: '100%',
     margin: 'auto',
-    marginTop: '20px'
   },
 });
 
